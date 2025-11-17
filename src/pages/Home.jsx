@@ -5,6 +5,7 @@ import Category from "../components/HomePage/Category";
 import Location from "../components/HomePage/Location";
 import MiniProfileMenu from "../components/HomePage/MiniProfileMenu";
 import Notifications from "../components/HomePage/Notifications";
+import AnimalDetails from "../components/Universal/AnimalDetails";
 import './Home.sass';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
                 </aside>
                 <main className="home-main-content">
                     <AnimalList />
+                    <AnimalDetails />
                 </main>
                 <aside className="home-sidebar-right">
                     <Notifications />
