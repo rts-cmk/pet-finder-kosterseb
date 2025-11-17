@@ -8,8 +8,8 @@ export default function Tutorial() {
         <div className="tutorial-page">
             <img src={BackgroundImage} alt="Background" className="background-image" />
             <div className="tutorial-content">
-                <h1>Welcome to the Tutorial Page</h1>
-                <p>This is where the tutorial content will go.</p>
+                <h1>Welcome to the Tutorial Page for Mets!</h1>
+                <p>Get ready to look for some great pets out there!</p>
             </div>
         </div>
     );
