@@ -9,6 +9,15 @@ function App() {
 
   return (
     <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Tutorial />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </Router>
     </>
   )
 }
