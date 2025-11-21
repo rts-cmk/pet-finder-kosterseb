@@ -31,7 +31,7 @@ const Location = ({ selectedLocation, onLocationChange }) => {
         className="location-button"
         onClick={() => setShowDropdown(!showDropdown)}
       >
-        <span className="location-icon">📍</span>
+        <span className="location-icon"><img src="./src/assets/location-icon.svg" alt="" /></span>
         <span className="location-text">{selectedLocation}</span>
         <span className="dropdown-icon">▼</span>
       </button>
