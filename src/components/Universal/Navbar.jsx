@@ -32,7 +32,7 @@ const Navbar = () => {
         to="/profile" 
         className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
       >
-        <span className="nav-icon">👤</span>
+        <span className="nav-icon"><img src="./src/assets/profile-icon.svg" alt="" /></span>
         <span className="nav-label">Profile</span>
       </NavLink>
     </nav>

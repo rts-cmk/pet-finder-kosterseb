@@ -56,7 +56,7 @@ const HomePage = ({ user }) => {
         />
         
         <div className="notification-icon" onClick={() => setShowNotifications(!showNotifications)}>
-          <img src="/assets/notification-bell.svg" alt="Notifications" />
+          <img src="./src/assets/notification-bell.svg" alt="Notifications" />
         </div>
       </div>
 
