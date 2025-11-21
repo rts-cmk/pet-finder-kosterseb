@@ -1,24 +1,60 @@
-import React from 'react';
+import './LoginDetails.scss';
 
-export default function LoginDetails() {
-    return (
-        <div className="login-details-component">
-            <h2>Login Details</h2>
-            <form className="login-details-form">
-                <div className="form-group">
-                    <label htmlFor="current-password">Current Password:</label>
-                    <input type="password" id="current-password" name="current-password" required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="new-password">New Password:</label>
-                    <input type="password" id="new-password" name="new-password" required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="confirm-password">Confirm New Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required />
-                </div>
-                <button type="submit" className="update-button">Update Password</button>
-            </form>
+const LoginDetails = ({ user }) => {
+  return (
+    <div className="login-details">
+      <h2>Account Settings</h2>
+      
+      <div className="settings-list">
+        <div className="setting-item">
+          <div className="setting-info">
+            <span className="setting-icon">📧</span>
+            <div>
+              <h3>Email</h3>
+              <p>user@example.com</p>
+            </div>
+          </div>
+          <button className="change-button">Change</button>
         </div>
-    );
-}
+
+        <div className="setting-item">
+          <div className="setting-info">
+            <span className="setting-icon">🔒</span>
+            <div>
+              <h3>Password</h3>
+              <p>••••••••</p>
+            </div>
+          </div>
+          <button className="change-button">Change</button>
+        </div>
+
+        <div className="setting-item">
+          <div className="setting-info">
+            <span className="setting-icon">📱</span>
+            <div>
+              <h3>Phone Number</h3>
+              <p>Not set</p>
+            </div>
+          </div>
+          <button className="change-button">Add</button>
+        </div>
+
+        <div className="setting-item">
+          <div className="setting-info">
+            <span className="setting-icon">🔔</span>
+            <div>
+              <h3>Notifications</h3>
+              <p>Enabled</p>
+            </div>
+          </div>
+          <label className="toggle-switch">
+            <input type="checkbox" defaultChecked />
+            <span className="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginDetails;

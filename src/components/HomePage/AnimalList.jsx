@@ -52,7 +52,7 @@ const AnimalList = ({ animals }) => {
           <div className="animal-info">
             <h3>{animal.breed}</h3>
             <p className="location">
-              <span className="location-icon">📍</span>
+              <span className="location-icon"><img src="./src/assets/location-icon.svg" alt="" /></span>
               {animal.location}
             </p>
             <p className="description">{animal.short_description}</p>

@@ -1,0 +1,86 @@
+.favourites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  
+    .favourite-card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      }
+  
+      .favourite-image {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        .remove-button {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          width: 32px;
+          height: 32px;
+          background-color: rgba(231, 76, 60, 0.9);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          opacity: 0;
+  
+          &:hover {
+            background-color: rgba(192, 57, 43, 1);
+            transform: scale(1.1);
+          }
+        }
+      }
+  
+      &:hover .remove-button {
+        opacity: 1;
+      }
+  
+      .favourite-info {
+        padding: 12px;
+  
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 6px;
+          color: #2c3e50;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+  
+        .location {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 13px;
+          color: #7f8c8d;
+  
+          .location-icon {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }

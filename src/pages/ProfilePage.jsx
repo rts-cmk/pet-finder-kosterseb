@@ -1,21 +1,20 @@
-import React from "react";
-import Navbar from "../components/Universal/Navbar";
-import MiniProfileMenu from "../components/Universal/MiniProfileMenu";
-import Notifications from "../components/Universal/Notifications";
-import ProfileDetails from "../components/ProfilePage/ProfileDetails";
-import LoginDetails from "../components/ProfilePage/LoginDetails";
 import './ProfilePage.scss';
+import ProfileDetails from '../components/ProfilePage/ProfileDetails';
+import LoginDetails from '../components/ProfilePage/LoginDetails';
 
-export default function Profile() {
-    return (
-        <div className="profile-page">
-            <Navbar />
-            <MiniProfileMenu />
-            <Notifications />
-            <div className="profile-content">
-                <ProfileDetails />
-                <LoginDetails />
-            </div>
-        </div>
-    );
-}
+const ProfilePage = ({ user }) => {
+  return (
+    <div className="profile-page">
+      <h1>My Profile</h1>
+      
+      <ProfileDetails user={user} />
+      <LoginDetails user={user} />
+      
+      <button className="logout-button">
+        Logout
+      </button>
+    </div>
+  );
+};
+
+export default ProfilePage;
