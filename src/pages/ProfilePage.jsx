@@ -4,7 +4,7 @@ import MiniProfileMenu from "../components/Universal/MiniProfileMenu";
 import Notifications from "../components/Universal/Notifications";
 import ProfileDetails from "../components/ProfilePage/ProfileDetails";
 import LoginDetails from "../components/ProfilePage/LoginDetails";
-import './Profile.sass';
+import './ProfilePage.scss';
 
 export default function Profile() {
     return (

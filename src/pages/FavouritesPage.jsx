@@ -4,7 +4,7 @@ import Navbar from '../components/Universal/Navbar';
 import MiniProfileMenu from "../components/Universal/MiniProfileMenu";
 import Notifications from "../components/Universal/Notifications";
 import AnimalDetails from '../components/Universal/AnimalDetails';
-import './Favourites.sass';
+import './FavouritesPage.scss';
 
 export default function Favourites() {
     return (

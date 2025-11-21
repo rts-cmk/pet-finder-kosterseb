@@ -1,29 +1,61 @@
-import React from 'react'
-import Chat from './pages/Chat.jsx'
-import Favourites from './pages/Favourites.jsx'
-import Home from './pages/Home.jsx'
-import Profile from './pages/Profile.jsx'
-import Tutorial from './pages/Tutorial.jsx'
-import NotFound from './pages/NotFound.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router'
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import { useState, useEffect } from 'react';
+import './App.scss';
 
+// Pages
+import TutorialPage from './pages/TutorialPage';
+import HomePage from './pages/HomePage';
+import AnimalDetailsPage from './pages/AnimalDetailsPage';
+import ChatPage from './pages/ChatPage';
+import FavouritesPage from './pages/FavouritesPage';
+import ProfilePage from './pages/ProfilePage';
+
+// Universal Components
+import Navbar from './components/Universal/Navbar';
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [showTutorial, setShowTutorial] = useState(true);
+
+  useEffect(() => {
+    // Fetch user data
+    fetch('http://localhost:4000/user')
+      .then(res => res.json())
+      .then(data => setUser(data))
+      .catch(err => console.error('Error fetching user:', err));
+
+    // Check if user has seen tutorial
+    const hasSeenTutorial = localStorage.getItem('hasSeenTutorial');
+    if (hasSeenTutorial) {
+      setShowTutorial(false);
+    }
+  }, []);
+
+  const handleSkipTutorial = () => {
+    localStorage.setItem('hasSeenTutorial', 'true');
+    setShowTutorial(false);
+  };
 
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Tutorial />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="/chat" element={<Chat />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
-    </>
-  )
+    <Router>
+      <div className="app">
+        {showTutorial ? (
+          <TutorialPage onSkip={handleSkipTutorial} />
+        ) : (
+          <>
+            <Routes>
+              <Route path="/" element={<HomePage user={user} />} />
+              <Route path="/animal/:id" element={<AnimalDetailsPage user={user} />} />
+              <Route path="/chat" element={<ChatPage user={user} />} />
+              <Route path="/favourites" element={<FavouritesPage user={user} />} />
+              <Route path="/profile" element={<ProfilePage user={user} />} />
+            </Routes>
+            <Navbar />
+          </>
+        )}
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
