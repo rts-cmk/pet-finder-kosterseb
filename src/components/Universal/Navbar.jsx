@@ -8,7 +8,7 @@ const Navbar = () => {
         to="/" 
         className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
       >
-        <span className="nav-icon">🏠</span>
+        <span className="nav-icon"><img src="./src/assets/home-icon.svg" alt="" /></span>
         <span className="nav-label">Home</span>
       </NavLink>
 
@@ -16,7 +16,7 @@ const Navbar = () => {
         to="/chat" 
         className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
       >
-        <span className="nav-icon">💬</span>
+        <span className="nav-icon"><img src="./src/assets/chat-icon.svg" alt="" /></span>
         <span className="nav-label">Chat</span>
       </NavLink>
 
@@ -24,7 +24,7 @@ const Navbar = () => {
         to="/favourites" 
         className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
       >
-        <span className="nav-icon">❤️</span>
+        <span className="nav-icon"><img src="./src/assets/favourite-icon.svg" alt="" /></span>
         <span className="nav-label">Favourites</span>
       </NavLink>
 

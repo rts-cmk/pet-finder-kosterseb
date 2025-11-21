@@ -45,7 +45,7 @@ const AnimalList = ({ animals }) => {
               className={`favourite-button ${favourites.includes(animal.id) ? 'active' : ''}`}
               onClick={(e) => toggleFavourite(e, animal.id)}
             >
-              ❤️
+              <img className='favourite-icon' src="./src/assets/favourite-icon.svg" alt="" />
             </button>
           </div>
           
