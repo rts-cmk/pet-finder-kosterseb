@@ -2,7 +2,7 @@ import React from 'react';
 import './Tutorial.sass';
 import { useNavigate } from 'react-router';
 
-const BackgroundImage = '../../assignment_assets/Animal.svg';
+const BackgroundImage = '../../assets/tutorial-background.svg';
 
 
 
