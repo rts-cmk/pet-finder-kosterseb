@@ -1,0 +1,36 @@
+.category-filter {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .category-button {
+      flex-shrink: 0;
+      background-color: #e9ecef;
+      color: #6c757d;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+  
+      &:hover {
+        background-color: #dee2e6;
+      }
+  
+      &.active {
+        background-color: #667eea;
+        color: white;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }

@@ -1,0 +1,131 @@
+.notifications-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  animation: fadeIn 0.3s ease;
+}
+
+.notifications-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 201;
+  animation: slideInRight 0.3s ease;
+  overflow-y: auto;
+
+  .notifications-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #f1f3f5;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    button {
+      width: 36px;
+      height: 36px;
+      background-color: #f8f9fa;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+  }
+
+  .notifications-list {
+    padding: 12px;
+
+    .notification-item {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #e9ecef;
+      }
+
+      .notification-icon {
+        width: 44px;
+        height: 44px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        flex-shrink: 0;
+      }
+
+      .notification-content {
+        flex: 1;
+
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #5a6c7d;
+          line-height: 1.5;
+          margin-bottom: 6px;
+        }
+
+        .notification-time {
+          font-size: 12px;
+          color: #95a5a6;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
