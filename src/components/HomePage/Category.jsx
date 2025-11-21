@@ -1,10 +1,21 @@
-import React from 'react';
+import './Category.scss';
 
-export default function Category() {
-    return (
-        <div className="category-component">
-            <h2>Category Component</h2>
-            <p>This is the Category component content.</p>
-        </div>
-    );
-}
+const Category = ({ selectedCategory, onCategoryChange }) => {
+  const categories = ['Cats', 'Dogs', 'Birds', 'Other'];
+
+  return (
+    <div className="category-filter">
+      {categories.map(category => (
+        <button
+          key={category}
+          className={`category-button ${selectedCategory === category ? 'active' : ''}`}
+          onClick={() => onCategoryChange(category)}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+export default Category;
