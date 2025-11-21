@@ -4,7 +4,7 @@ const TutorialPage = ({ onSkip }) => {
   return (
     <div className="tutorial-page">
       <div className="tutorial-background">
-        <img src="/assets/tutorial-background.svg" alt="Tutorial" className="background-svg" />
+        <img src="../src/assets/tutorial-background.svg" alt="Tutorial" className="background-svg" />
       </div>
       
       <div className="tutorial-content">
